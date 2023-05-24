@@ -1,0 +1,24 @@
+In Cisco 7200 Router console run the following commands one by one:
+
+R1# sh run
+R1# conf
+R1(config)# interface fastEthernet 0/0
+R1(config-if)# ip address 192.168.0.1 255.255.255.0
+R1(config-if)# no shut
+R1(config-if)# exit
+R1(config)# exit
+R1# sh ip interface brief
+R1# ping 192.168.0.100
+R1# ping 192.168.0.200
+
+In Virtual PC1 console run the following commands one by one:
+PC1> ip 192.168.0.100 255.255.255.0 192.168.0.1
+PC1> sh ip
+PC1> save
+
+In Virtual PC2 console run the following commands one by one:
+PC2> ip 192.168.0.200 255.255.255.0 192.168.0.1
+PC2> sh ip
+PC2> save
+
+Finally ping VPCs from each others' console
